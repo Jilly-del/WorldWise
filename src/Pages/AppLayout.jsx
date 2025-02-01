@@ -1,7 +1,12 @@
+import SideBar from "../component/SideBar";
+import styles from "./AppLayout.module.css";
+import Map from "../component/Map";
+
 function AppLayout() {
   return (
-    <div>
-      <p>Appp Layout</p>
+    <div className={styles.app}>
+      <SideBar />
+      <Map />
     </div>
   );
 }
