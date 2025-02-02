@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import styles from "./CountryItem.module.css";
 
 function CountryItem({ country }) {
@@ -8,5 +10,15 @@ function CountryItem({ country }) {
     </li>
   );
 }
+
+CountryItem.propTypes = {
+  country: PropTypes.arrayOf(
+    PropTypes.shape({
+      emoji: PropTypes.string,
+
+      country: PropTypes.string,
+    })
+  ),
+};
 
 export default CountryItem;
