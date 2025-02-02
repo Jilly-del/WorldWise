@@ -3,7 +3,8 @@
 .cityItem:visited {
   display: flex;
   gap: 1.6rem;
-  align-items: center;
+  flex-direction: row;
+  /* align-items: center; */
 
   background-color: var(--color-dark--2);
   border-radius: 7px;
