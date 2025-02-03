@@ -12,13 +12,10 @@ function CountryItem({ country }) {
 }
 
 CountryItem.propTypes = {
-  country: PropTypes.arrayOf(
-    PropTypes.shape({
-      emoji: PropTypes.string,
-
-      country: PropTypes.string,
-    })
-  ),
+  country: PropTypes.shape({
+    emoji: PropTypes.string,
+    country: PropTypes.string,
+  }).isRequired,
 };
 
 export default CountryItem;
