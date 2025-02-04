@@ -3,8 +3,10 @@ import styles from "./CountryList.module.css";
 import Spinner from "../component/Spinner";
 import CountryItem from "./CountryItem";
 import Message from "../component/Message";
+import { useCities } from "../context/CitiesContext";
 
-function CountryList({ cities, isloading }) {
+function CountryList() {
+  const { cities, isloading } = useCities();
   if (isloading) return <Spinner />;
 
   if (!cities.length) return <Message message="Add your first City" />;
