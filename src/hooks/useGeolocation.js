@@ -1,5 +1,4 @@
 import { useState } from "react";
-// ("https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=0&longitude=0");
 
 export function useGeolocation(defaultPosition = null) {
   const [isLoading, setIsLoading] = useState(false);
