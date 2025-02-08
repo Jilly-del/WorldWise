@@ -1,5 +1,3 @@
-// "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=0&longitude=0"
-
 import { useState } from "react";
 import styles from "./Form.module.css";
 import Button from "./Button";
