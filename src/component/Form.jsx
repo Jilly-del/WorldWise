@@ -5,6 +5,8 @@ import BackButton from "./BackButton";
 import UseUrlPosition from "../hooks/UseUrlPosition.js";
 import Message from "./Message";
 import Spinner from "./Spinner";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export function convertToEmoji(countryCode) {
   const codePoints = countryCode
@@ -21,22 +23,27 @@ function Form() {
   const [date, setDate] = useState(new Date());
   const [notes, setNotes] = useState("");
   const [lat, lng] = UseUrlPosition();
-  const [IsloadingGeoCoding, setIsloadingGeoCoding] = useState("false");
+  const [IsloadingGeoCoding, setIsloadingGeoCoding] = useState(false);
   const [emoji, setEmoji] = useState();
   const [geoCodingError, setGeoCodingError] = useState();
+
   useEffect(
     function () {
+      if (!lat && !lng) return;
       async function fetchCityData() {
         try {
           setGeoCodingError("");
-          setIsloadingGeoCoding("true");
+          setIsloadingGeoCoding(true);
+
           const res = await fetch(
             `${BASE_URL}?latitude=${lat}&longitude=${lng}`
           );
+
           const data = await res.json();
+          console.log(data);
           if (!data.countryCode) {
             throw new Error(
-              "This doesn't feel like a city click somewhere else"
+              "That doesn't seem to be a city. Click somewhere else 😉"
             );
           }
 
@@ -46,17 +53,37 @@ function Form() {
         } catch (error) {
           setGeoCodingError(error.message);
         } finally {
-          setIsloadingGeoCoding("false");
+          setIsloadingGeoCoding(false);
         }
       }
       fetchCityData();
     },
     [lat, lng]
   );
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (!cityName || !date) return;
+
+    const newCity = {
+      cityName,
+      country,
+      emoji,
+      date,
+      notes,
+      position: { lat, lng },
+    };
+    console.log(newCity);
+  }
+
   if (IsloadingGeoCoding) return <Spinner />;
   if (geoCodingError) return <Message message={geoCodingError} />;
+  if (!lat && !lng)
+    return <Message message={"Start by clicking somewhere on the map"} />;
+
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.row}>
         <label htmlFor="cityName">City name</label>
         <input
@@ -69,10 +96,12 @@ function Form() {
 
       <div className={styles.row}>
         <label htmlFor="date">When did you go to {cityName}?</label>
-        <input
+
+        <DatePicker
           id="date"
-          onChange={(e) => setDate(e.target.value)}
-          value={date}
+          onChange={(date) => setDate(date)}
+          selected={date}
+          dateFormat="dd/MM/yyyy"
         />
       </div>
 

@@ -60,7 +60,7 @@ function useCities() {
 }
 
 CitiesProvider.propTypes = {
-  children: PropTypes.node.isRequired, // Ensures children is a valid React node
+  children: PropTypes.node.isRequired,
 };
 
 export { CitiesProvider, useCities };
