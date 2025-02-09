@@ -47,6 +47,90 @@
         "lng": "-2.13128394200588"
       },
       "id": "98443198"
+    },
+    {
+      "id": "8587",
+      "cityName": "Chelva",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2025-02-09T19:07:44.065Z",
+      "notes": "note",
+      "position": {
+        "lat": "39.757879992021756",
+        "lng": "-1.0107421875000002"
+      }
+    },
+    {
+      "id": "f42c",
+      "cityName": "Chamusca",
+      "country": "Portugal",
+      "emoji": "🇵🇹",
+      "date": "2025-02-09T19:17:04.137Z",
+      "notes": "jilly",
+      "position": {
+        "lat": "39.24765903623024",
+        "lng": "-8.256494896950931"
+      }
+    },
+    {
+      "id": "8ae5",
+      "cityName": "Villanueva del Fresno",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2025-02-09T19:30:46.608Z",
+      "notes": "hey",
+      "position": {
+        "lat": "38.42536952501763",
+        "lng": "-7.223068135391507"
+      }
+    },
+    {
+      "id": "1baf",
+      "cityName": "Castilblanco",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2025-02-09T19:37:36.112Z",
+      "notes": "hi",
+      "position": {
+        "lat": "39.31496290824889",
+        "lng": "-5.094333966889302"
+      }
+    },
+    {
+      "id": "f03c",
+      "cityName": "Valpacos",
+      "country": "Portugal",
+      "emoji": "🇵🇹",
+      "date": "2025-02-09T20:01:39.988Z",
+      "notes": "hj",
+      "position": {
+        "lat": "41.65520990013673",
+        "lng": "-7.400479302481523"
+      }
+    },
+    {
+      "id": "ad5e",
+      "cityName": "Lezuza",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2025-02-09T20:04:41.648Z",
+      "notes": "",
+      "position": {
+        "lat": "38.922757533782246",
+        "lng": "-2.2586529238311863"
+      }
+    },
+    {
+      "id": "1f0f",
+      "cityName": "Ayllon",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2025-02-09T20:09:28.157Z",
+      "notes": "",
+      "position": {
+        "lat": "41.30915889412642",
+        "lng": "-3.2258619617734823"
+      }
     }
   ]
 }
