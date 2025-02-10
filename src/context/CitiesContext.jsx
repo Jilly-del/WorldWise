@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useReducer } from "react";
-import PropTypes, { func } from "prop-types";
+import PropTypes from "prop-types";
 
 const BASE_URL = `http://localhost:4000`;
 
@@ -29,11 +29,21 @@ function reducer(state, action) {
         isLoading: false,
         currentCity: action.payload,
       };
-    case "cities/created":
-      return "";
+    case "city/created":
+      return {
+        ...state,
+        isLoading: false,
+        cities: [...state.cities, action.payload],
+        currentCity: action.payload,
+      };
 
-    case "cities/deleted":
-      return "";
+    case "city/deleted":
+      return {
+        ...state,
+        isLoading: false,
+        cities: state.cities.filter((city) => city.id !== action.payload),
+        currentCity: {},
+      };
     case "rejected":
       return { ...state, isLoading: false, error: action.payload };
     default:
@@ -42,7 +52,7 @@ function reducer(state, action) {
 }
 
 function CitiesProvider({ children }) {
-  const [{ cities, isLoading, currentCity }, dispatch] = useReducer(
+  const [{ cities, isLoading, currentCity, error }, dispatch] = useReducer(
     reducer,
     initialState
   );
@@ -65,13 +75,18 @@ function CitiesProvider({ children }) {
   }, []);
 
   async function getCity(id) {
+    if (Number(id) === currentCity.id) return;
+
     dispatch({ type: "loading" });
     try {
       const res = await fetch(`${BASE_URL}/cities/${id}`);
       const data = await res.json();
       dispatch({ type: "city/loaded", payload: data });
     } catch {
-      alert("There was an error loading the data");
+      dispatch({
+        type: "reject",
+        payload: "There was an error loading the city data",
+      });
     }
   }
 
@@ -84,11 +99,12 @@ function CitiesProvider({ children }) {
         headers: { "Content-Type": "application/json" },
       });
       const data = await res.json();
-      setCurrentCity(data);
-
-      Setcities((city) => [...city, data]);
+      dispatch({ type: "city/created", payload: data });
     } catch {
-      alert("There was an error creating the city");
+      dispatch({
+        type: "reject",
+        payload: "There was an error creating the city",
+      });
     }
   }
 
@@ -96,10 +112,10 @@ function CitiesProvider({ children }) {
     dispatch({ type: "loading" });
 
     try {
-      await fetch(`${BASE_URL}/cities${id}`, {
+      await fetch(`${BASE_URL}/cities/${id}`, {
         method: "DELETE",
       });
-      Setcities((city) => city.filter((city) => city.id !== id));
+      dispatch({ type: "city/deleted", payload: id });
     } catch {
       alert("There was an error deleting the city");
     }
@@ -114,6 +130,7 @@ function CitiesProvider({ children }) {
         currentCity,
         createCity,
         deleteCity,
+        error,
       }}
     >
       {children}

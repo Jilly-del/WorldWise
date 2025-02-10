@@ -49,42 +49,6 @@
       "id": "98443198"
     },
     {
-      "id": "8587",
-      "cityName": "Chelva",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2025-02-09T19:07:44.065Z",
-      "notes": "note",
-      "position": {
-        "lat": "39.757879992021756",
-        "lng": "-1.0107421875000002"
-      }
-    },
-    {
-      "id": "f42c",
-      "cityName": "Chamusca",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2025-02-09T19:17:04.137Z",
-      "notes": "jilly",
-      "position": {
-        "lat": "39.24765903623024",
-        "lng": "-8.256494896950931"
-      }
-    },
-    {
-      "id": "8ae5",
-      "cityName": "Villanueva del Fresno",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2025-02-09T19:30:46.608Z",
-      "notes": "hey",
-      "position": {
-        "lat": "38.42536952501763",
-        "lng": "-7.223068135391507"
-      }
-    },
-    {
       "id": "1baf",
       "cityName": "Castilblanco",
       "country": "Spain",
