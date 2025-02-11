@@ -37,63 +37,15 @@
       "id": "98443197"
     },
     {
-      "cityName": "Nijar",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2023-04-03T07:47:59.202Z",
-      "notes": "",
+      "id": "36ad",
+      "cityName": "Bni Tadjite",
+      "country": "Morocco",
+      "emoji": "🇲🇦",
+      "date": "2025-02-10T23:47:23.648Z",
+      "notes": "test",
       "position": {
-        "lat": "36.967508314568164",
-        "lng": "-2.13128394200588"
-      },
-      "id": "98443198"
-    },
-    {
-      "id": "1baf",
-      "cityName": "Castilblanco",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2025-02-09T19:37:36.112Z",
-      "notes": "hi",
-      "position": {
-        "lat": "39.31496290824889",
-        "lng": "-5.094333966889302"
-      }
-    },
-    {
-      "id": "f03c",
-      "cityName": "Valpacos",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2025-02-09T20:01:39.988Z",
-      "notes": "hj",
-      "position": {
-        "lat": "41.65520990013673",
-        "lng": "-7.400479302481523"
-      }
-    },
-    {
-      "id": "ad5e",
-      "cityName": "Lezuza",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2025-02-09T20:04:41.648Z",
-      "notes": "",
-      "position": {
-        "lat": "38.922757533782246",
-        "lng": "-2.2586529238311863"
-      }
-    },
-    {
-      "id": "1f0f",
-      "cityName": "Ayllon",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2025-02-09T20:09:28.157Z",
-      "notes": "",
-      "position": {
-        "lat": "41.30915889412642",
-        "lng": "-3.2258619617734823"
+        "lat": "32.2276898179087",
+        "lng": "-3.7473136551664474"
       }
     }
   ]
