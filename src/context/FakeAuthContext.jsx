@@ -10,7 +10,7 @@ const initialState = {
 function reducer(state, action) {
   switch (action.type) {
     case "login":
-      return { ...state, user: action.payload, isAutheticated: false };
+      return { ...state, user: action.payload, isAutheticated: true };
 
     case "logout":
       return { ...state, user: null, isAutheticated: false };
