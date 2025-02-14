@@ -3,27 +3,27 @@ import styles from "./Login.module.css";
 import PageNav from "../component/PageNav";
 import { useAuth } from "../context/FakeAuthContext";
 import Button from "../component/Button";
-import { useNavigate } from "react-router-dom";
+import { replace, useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("jack@example.com");
   const [password, setPassword] = useState("qwerty");
-  const { login, isAutheticated } = useAuth();
-  const navigate = useNavigate;
+  const { login, isAuthenticated } = useAuth();
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (email && password) login;
-    console.log("hh");
+    if (email && password) login(email, password);
+    console.log("hi");
   }
 
   useEffect(
     function () {
-      if (isAutheticated) {
-        navigate("/app");
+      if (isAuthenticated) {
+        navigate("/app", { replace: true });
       }
     },
-    [isAutheticated, navigate]
+    [isAuthenticated, navigate]
   );
 
   return (

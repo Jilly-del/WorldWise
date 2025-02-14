@@ -1,19 +1,20 @@
 import { createContext, useContext, useReducer } from "react";
+import PropTypes from "prop-types";
 
 const AuthContext = createContext();
 
 const initialState = {
   user: null,
-  isAutheticated: false,
+  isAuthenticated: false,
 };
 
 function reducer(state, action) {
   switch (action.type) {
     case "login":
-      return { ...state, user: action.payload, isAutheticated: true };
+      return { ...state, user: action.payload, isAuthenticated: true };
 
     case "logout":
-      return { ...state, user: null, isAutheticated: false };
+      return { ...state, user: null, isAuthenticated: false };
 
     default:
       throw new Error("unknown action");
@@ -27,15 +28,15 @@ const FAKE_USER = {
   avatar: "https://i.pravatar.cc/100?u=zz",
 };
 
-function AuthoProvider({ children }) {
-  const [{ user, isAutheticated }, dispatch] = useReducer(
+function AuthProvider({ children }) {
+  const [{ user, isAuthenticated }, dispatch] = useReducer(
     reducer,
     initialState
   );
 
   function login(email, password) {
     if (email === FAKE_USER.email && password === FAKE_USER.password)
-      dispatch({ type: login, payload: FAKE_USER });
+      dispatch({ type: "login", payload: FAKE_USER });
   }
 
   function logout() {
@@ -43,18 +44,22 @@ function AuthoProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={{ user, isAutheticated, login, logout }}>
+    <AuthContext.Provider value={{ user, isAuthenticated, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
 }
 
+AuthProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
 function useAuth() {
   const context = useContext(AuthContext);
   if (context === undefined) {
-    throw new Error("AuthoContext was used outside AuthoProvider");
+    throw new Error("AuthContext was used outside AuthProvider");
   }
   return context;
 }
 
-export { AuthoProvider, useAuth };
+export { AuthProvider, useAuth };
