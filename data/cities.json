@@ -37,18 +37,6 @@
       "id": "98443197"
     },
     {
-      "id": "36ad",
-      "cityName": "Bni Tadjite",
-      "country": "Morocco",
-      "emoji": "🇲🇦",
-      "date": "2025-02-10T23:47:23.648Z",
-      "notes": "test",
-      "position": {
-        "lat": "32.2276898179087",
-        "lng": "-3.7473136551664474"
-      }
-    },
-    {
       "id": "d9d5",
       "cityName": "Olmedo",
       "country": "Spain",
@@ -73,15 +61,15 @@
       }
     },
     {
-      "id": "a186",
-      "cityName": "Anquela del Pedregal",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2025-04-30T10:03:15.970Z",
-      "notes": "I met the love of my life here \n",
+      "id": "852a",
+      "cityName": "Iwo",
+      "country": "Nigeria",
+      "emoji": "🇳🇬",
+      "date": "2025-04-30T12:42:01.881Z",
+      "notes": "i met the love of my life ",
       "position": {
-        "lat": "40.713955826286046",
-        "lng": "-1.7138671875000002"
+        "lat": "7.626609147576068",
+        "lng": "4.202270507812501"
       }
     }
   ]
