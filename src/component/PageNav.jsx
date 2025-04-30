@@ -12,7 +12,7 @@ function PageNav() {
           <NavLink to={"/"}>Home</NavLink>
         </li>
         <li>
-          <NavLink to={"/pricing"}>Princing</NavLink>
+          <NavLink to={"/pricing"}>Pricing</NavLink>
         </li>
         <li>
           <NavLink to={"/Product"}>Product</NavLink>

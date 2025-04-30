@@ -71,6 +71,18 @@
         "lat": "39.28056268959523",
         "lng": "-6.543142913128832"
       }
+    },
+    {
+      "id": "a186",
+      "cityName": "Anquela del Pedregal",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2025-04-30T10:03:15.970Z",
+      "notes": "I met the love of my life here \n",
+      "position": {
+        "lat": "40.713955826286046",
+        "lng": "-1.7138671875000002"
+      }
     }
   ]
 }
