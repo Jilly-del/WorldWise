@@ -3,6 +3,7 @@ import AppNav from "../component/AppNav";
 import styles from "./SideBar.module.css";
 import { Outlet } from "react-router-dom";
 
+// hey÷\
 function SideBar() {
   return (
     <div className={styles.sidebar}>
